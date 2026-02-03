@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from './Header';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Layout({ children }) {
+    const { t } = useLanguage();
     return (
         <div className="layout-root">
             <Header />
@@ -10,7 +12,7 @@ export default function Layout({ children }) {
             </main>
             <footer className="app-footer">
                 <p className="footer-text">
-                    © {new Date().getFullYear()} KAPITAL STUDIO. ALL RIGHTS RESERVED.
+                    © {new Date().getFullYear()} {t('footer.rights')}
                 </p>
             </footer>
         </div>

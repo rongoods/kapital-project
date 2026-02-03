@@ -1,33 +1,36 @@
 import React from 'react';
 import StudioCard from '../components/StudioCard';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Home() {
+    const { t } = useLanguage();
+
     const metrics = [
-        { label: 'Portfolio Valuation', value: '€25M+' },
-        { label: 'Strategic Partners', value: '12' },
-        { label: 'Active Ventures', value: '8' },
-        { label: 'Current Portfolio MOIC', value: '2.1x' },
+        { label: t('home.metrics.valuation'), value: '€25M+' },
+        { label: t('home.metrics.partners'), value: '12' },
+        { label: t('home.metrics.ventures'), value: '8' },
+        { label: t('home.metrics.moic'), value: '2.1x' },
     ];
 
     const studios = [
         {
-            title: 'Marketing Studio',
-            description: 'Transitioning brands from "commodity" to "cult". Proprietary audience ownership and anti-algorithmic strategy.',
+            title: t('studios.marketing.title'),
+            description: t('studios.marketing.desc'),
             link: '/marketing'
         },
         {
-            title: 'IT & Product Studio',
-            description: 'The technical backbone for rapid scaling. Deployment of the "Kapital Stack" and AI-Agent integration.',
+            title: t('studios.itProduct.title'),
+            description: t('studios.itProduct.desc'),
             link: '/it-product'
         },
         {
-            title: 'Design Studio',
-            description: 'Defining visual gravity. High-friction branding and luxury-tier asset creation.',
+            title: t('studios.design.title'),
+            description: t('studios.design.desc'),
             link: '/design'
         },
         {
-            title: 'Investment Mgmt',
-            description: 'Fueling growth through strategic equity and liquid capital. Seed-stage venture funding.',
+            title: t('studios.investment.title'),
+            description: t('studios.investment.desc'),
             link: '/investment'
         }
     ];
@@ -37,14 +40,14 @@ export default function Home() {
             {/* Hero Section */}
             <section className="hero-section">
                 <h1 className="hero-title">
-                    KAPITAL STUDIO
+                    {t('home.headline')}
                 </h1>
                 <p className="hero-subtitle">
-                    THE ARCHITECTS OF MARKET DOMINANCE. BERLIN.
+                    {t('home.subHeadline')}
                 </p>
 
                 <div className="scroll-indicator">
-                    [SCROLL]
+                    [{t('common.scroll')}]
                 </div>
             </section>
 
@@ -64,7 +67,7 @@ export default function Home() {
             <section className="container studios-section">
                 <div className="section-header">
                     <span className="section-square"></span>
-                    <h2 className="section-title">Select Division</h2>
+                    <h2 className="section-title">{t('common.selectDivision')}</h2>
                 </div>
 
                 <div className="studios-grid">

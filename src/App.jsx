@@ -6,6 +6,8 @@ import Marketing from './pages/Marketing';
 import ITProduct from './pages/ITProduct';
 import Design from './pages/Design';
 import Investment from './pages/Investment';
+import Contact from './pages/Contact';
+import Partnership from './pages/Partnership';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/it-product" element={<ITProduct />} />
         <Route path="/design" element={<Design />} />
         <Route path="/investment" element={<Investment />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/partnership" element={<Partnership />} />
       </Routes>
     </Layout>
   );

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function StudioCard({ title, description, link }) {
+    const { t } = useLanguage();
     return (
         <Link to={link} className="studio-card group">
             <div className="card-content">
@@ -17,7 +19,7 @@ export default function StudioCard({ title, description, link }) {
 
                 <div className="card-action">
                     <span className="enter-badge">
-                        [ENTER]
+                        [{t('common.enter')}]
                     </span>
                 </div>
             </div>
