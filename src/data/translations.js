@@ -1,7 +1,7 @@
 export const translations = {
     en: {
         header: {
-            manifesto: 'MANIFESTO',
+            manifesto: 'PRINCIPLES',
             studios: 'STUDIOS',
             ventures: 'VENTURES',
             contact: 'CONTACT',
@@ -12,63 +12,89 @@ export const translations = {
         },
         common: {
             backToCore: 'BACK TO CORE',
-            enter: 'ENTER',
+            enter: 'CONNECT WITH THE STUDIO',
             scroll: 'SCROLL',
             selectDivision: 'Select Division',
             purpose: 'PURPOSE',
             breakdown: 'BREAKDOWN',
-            serviceModel: 'SERVICE MODEL'
+            serviceModel: 'SERVICE MODEL',
+            capabilities: 'OPERATIONAL MODULES'
         },
         home: {
             headline: 'KAPITAL STUDIO',
-            subHeadline: 'THE ARCHITECTS OF MARKET DOMINANCE. BERLIN.',
+            subHeadline: 'Precision Venture Architecture. Berlin. 2026.',
             metrics: {
                 valuation: 'Portfolio Valuation',
                 partners: 'Strategic Partners',
                 ventures: 'Active Ventures',
                 moic: 'Current Portfolio MOIC'
+            },
+            principles: {
+                title: 'THE KAPITAL PRINCIPLES',
+                p1: {
+                    title: 'Precision Engineering',
+                    desc: 'We prioritize technical debt reduction and scalable architecture above all. If it doesn\'t scale, it isn\'t built.'
+                },
+                p2: {
+                    title: 'Strategic Alignment',
+                    desc: 'We are partners, not vendors. Our equity-model ensures our goals are perfectly mirrored with our clients.'
+                },
+                p3: {
+                    title: 'Operational Transparency',
+                    desc: 'We provide clear, data-backed reporting across IT, Design, and Marketing performance.'
+                },
+                p4: {
+                    title: 'Market Longevity',
+                    desc: 'We build for the next decade, not the next trend. We focus on "Owned Media" and sustainable growth.'
+                }
             }
         },
         studios: {
             marketing: {
                 title: 'Marketing Studio',
-                desc: 'Transitioning brands from "commodity" to "cult". Proprietary audience ownership and anti-algorithmic strategy.',
+                desc: 'Strategic Brand Positioning & Owned Media. Reducing platform dependency.',
                 page: {
                     title: 'MARKETING STUDIO',
-                    subtitle: '[The Evangelism Division]',
-                    headline: 'Beyond Performance. Building Devotion.',
-                    copy: 'We reject the "pay-to-play" trap. We focus on Brand Mythology and Owned Media Ecosystems (Newsletters/Communities) to ensure brands bypass algorithmic reliance.',
-                    cta: 'ENGINEER DEVOTION',
-                    purpose: 'Transitioning brands from "commodity" to "cult."',
+                    subtitle: '[The Growth Division]',
+                    headline: 'Strategic Brand Positioning & Owned Media.',
+                    copy: 'We move beyond traditional performance marketing. By developing proprietary media ecosystems and deep-market positioning, we reduce platform dependency and increase long-term customer lifetime value.',
+                    cta: 'VIEW GROWTH STRATEGY',
+                    purpose: 'Transitioning brands from "commodity" to strategic assets.',
                     breakdown: {
                         1: {
                             title: 'Audience Ownership',
                             desc: 'Proprietary Newsletter & Community ecosystems.'
                         },
                         2: {
-                            title: 'Brand Mythology',
-                            desc: 'Constructing belief systems, not just campaigns.'
+                            title: 'Brand Positioning',
+                            desc: 'Constructing market authority, not just campaigns.'
                         },
                         3: {
-                            title: 'Anti-Algorithmic',
-                            desc: 'Strategies that survive platform volatility.'
+                            title: 'Platform Independence',
+                            desc: 'Strategies that survive algorithmic volatility.'
                         }
                     },
                     service: {
-                        title: 'Engineered Devotion',
-                        desc: 'Building deep loyalty that bypasses traditional ad-spend mechanics. We turn customers into evangelists.'
+                        title: 'Strategic Growth',
+                        desc: 'Building deep loyalty that bypasses traditional ad-spend mechanics. We turn customers into long-term stakeholders.'
+                    },
+                    capabilities: {
+                        1: { title: 'Owned Media Strategy', desc: 'Development of proprietary newsletters and content hubs.' },
+                        2: { title: 'Brand Positioning', desc: 'Competitive market analysis and high-level messaging.' },
+                        3: { title: 'Growth Systems', desc: 'Automated lead generation and funnel optimization.' },
+                        4: { title: 'Community Architecture', desc: 'Building private member ecosystems and loyalty loops.' }
                     }
                 }
             },
             itProduct: {
                 title: 'IT & Product Studio',
-                desc: 'The technical backbone for rapid scaling. Deployment of the "Kapital Stack" and AI-Agent integration.',
+                desc: 'Building Scalable Digital Infrastructure. Enterprise-grade stability.',
                 page: {
                     title: 'IT & PRODUCT',
                     subtitle: '[The Infrastructure Division]',
-                    headline: 'Engineering the Inevitable.',
-                    copy: 'We build the "Kapital Stack"—a proprietary, modular framework for rapid deployment. Focus on Agentic Workflows (AI), Architecture as a Service (AaaS), and 4-week MVP hyper-sprints.',
-                    cta: 'INITIATE THE STACK',
+                    headline: 'Building Scalable Digital Infrastructure.',
+                    copy: 'We deploy the Kapital Stack—a modular framework designed for enterprise-grade stability. We specialize in integrating AI-driven operational workflows and rapid-cycle product development to ensure technical longevity.',
+                    cta: 'VIEW INFRASTRUCTURE',
                     purpose: 'Building the technical backbone for rapid scaling.',
                     breakdown: {
                         1: {
@@ -87,27 +113,33 @@ export const translations = {
                     service: {
                         title: 'Architecture as a Service',
                         desc: '(AaaS). Infrastructure that scales from Day 0. We build systems that don\'t need rebuilding at Series A.'
+                    },
+                    capabilities: {
+                        1: { title: 'Systems Architecture', desc: 'Custom ERP/CRM integrations and cloud infrastructure.' },
+                        2: { title: 'Agentic Workflows', desc: 'Deployment of autonomous AI agents for task automation.' },
+                        3: { title: 'Product Development', desc: 'Full-stack web and mobile application engineering.' },
+                        4: { title: 'Technical Audit', desc: 'Deep-dive analysis of legacy code and security protocols.' }
                     }
                 }
             },
             design: {
                 title: 'Design Studio',
-                desc: 'Defining visual gravity. High-friction branding and luxury-tier asset creation.',
+                desc: 'High-End Identity & User Experience. Institutional quality.',
                 page: {
                     title: 'DESIGN STUDIO',
-                    subtitle: '[The Aesthetic Division]',
-                    headline: 'Visual Gravity.',
-                    copy: 'We believe in "high-friction" design that stops the scroll. We provide Identity Architecture, tactile UI/UX, and luxury-tier digital craftsmanship.',
-                    cta: 'ACQUIRE THE AESTHETIC',
+                    subtitle: '[The Identity Division]',
+                    headline: 'High-End Identity & User Experience.',
+                    copy: 'Design is a strategic asset. We craft visual identities and digital interfaces that reflect institutional quality, ensuring every brand touchpoint reinforces market authority and trust.',
+                    cta: 'VIEW DESIGN PORTFOLIO',
                     purpose: 'Defining the visual gravity of a brand.',
                     breakdown: {
                         1: {
-                            title: 'High-Friction Branding',
-                            desc: 'Visuals that demand attention and pause.'
+                            title: 'Strategic Branding',
+                            desc: 'Visuals that demand attention and communicate authority.'
                         },
                         2: {
-                            title: 'The Feel > Usability',
-                            desc: 'Prioritizing visceral impact over generic usability patterns.'
+                            title: 'User Experience',
+                            desc: 'Prioritizing intuitive flows and premium interaction.'
                         },
                         3: {
                             title: 'Luxury Assets',
@@ -115,20 +147,26 @@ export const translations = {
                         }
                     },
                     service: {
-                        title: 'Visual Identity & Kinetic Design',
-                        desc: 'We craft the visual soul of the company. Movement, typography, and layout that commands respect.'
+                        title: 'Visual Identity & Systems',
+                        desc: 'We craft the visual soul of the company. Typography, layout, and motion that commands respect.'
+                    },
+                    capabilities: {
+                        1: { title: 'Corporate Identity', desc: 'Comprehensive brand guidelines, typography, and logos.' },
+                        2: { title: 'UI/UX Design', desc: 'User-centric interface architecture for complex digital products.' },
+                        3: { title: 'Motion & Kinetic Design', desc: 'High-end video assets and interface animations.' },
+                        4: { title: 'Strategic Prototyping', desc: 'Visualizing future product states for stakeholder alignment.' }
                     }
                 }
             },
             investment: {
                 title: 'Investment Mgmt',
-                desc: 'Fueling growth through strategic equity and liquid capital. Seed-stage venture funding.',
+                desc: 'Integrated Capital & Venture Management. Strategic holding company.',
                 page: {
                     title: 'INVESTMENT MGMT',
                     subtitle: '[The Capital Division]',
-                    headline: 'Strategic Equity. Long-Term Dominance.',
-                    copy: 'We are a Metaphysical Holding Company. We provide a mix of liquid capital and "Sweat Equity" through our studio services, acting as the innovation arm for German wealth and the Mittelstand.',
-                    cta: 'SUBMIT FOR PARTNERSHIP',
+                    headline: 'Integrated Capital & Venture Management.',
+                    copy: 'A strategic holding company specializing in the German market. We align our interests through equity-for-service models and direct capital injections, driving value for our partners and the Mittelstand.',
+                    cta: 'VIEW PARTNERSHIP MODELS',
                     purpose: 'Fueling growth through strategic equity and liquid capital.',
                     breakdown: {
                         1: {
@@ -147,6 +185,12 @@ export const translations = {
                     service: {
                         title: 'Equity-for-Service & GP/LP',
                         desc: 'Aligning incentives. We win when you win. Structure capital for long-term compounding.'
+                    },
+                    capabilities: {
+                        1: { title: 'Equity-for-Service', desc: 'Structured partnerships for early and growth-stage ventures.' },
+                        2: { title: 'Venture Incubation', desc: 'Full-lifecycle support from ideation to market entry.' },
+                        3: { title: 'Mittelstand Digitalization', desc: 'Helping established German firms transition to digital-first models.' },
+                        4: { title: 'Portfolio Management', desc: 'Strategic oversight and exit preparation for equity holdings.' }
                     }
                 }
             }
@@ -158,16 +202,16 @@ export const translations = {
             email: 'DIGITAL COMMUNIQUE',
             forum: {
                 title: 'FORUM',
-                name: 'CODENAME / NAME',
+                name: 'NAME',
                 email: 'RETURN ADDRESS',
-                message: 'TRANSMISSION',
-                submit: 'INITIATE UPLOAD',
-                sending: 'TRANSMITTING...',
-                sent: 'TRANSMISSION RECEIVED.'
+                message: 'MESSAGE',
+                submit: 'SEND MESSAGE',
+                sending: 'SENDING...',
+                sent: 'MESSAGE RECEIVED.'
             }
         },
         partnership: {
-            title: 'PARTNERSHIP PROTOCOL',
+            title: 'PARTNERSHIP INQUIRY PROTOCOL',
             subtitle: '[THE LEAD FORM]',
             basics: {
                 title: 'THE BASICS',
@@ -178,8 +222,8 @@ export const translations = {
             },
             thesis: {
                 title: 'THE THESIS',
-                bottleneck: 'PRIMARY BOTTLENECK PREVENTING DOMINANCE?',
-                devotion: 'WHY WOULD A CUSTOMER BE DEVOTED TO YOUR BRAND?'
+                bottleneck: 'PRIMARY BOTTLENECK PREVENTING GROWTH?',
+                devotion: 'WHY WOULD A CUSTOMER CHOOSE YOUR BRAND?'
             },
             debt: {
                 title: 'TECHNICAL DEBT',
@@ -188,17 +232,16 @@ export const translations = {
             service: {
                 title: 'SERVICE SELECTION',
                 it: 'IT & PRODUCT',
-                marketing: 'MARKETING',
-                design: 'DESIGN',
                 investment: 'INVESTMENT'
             },
             submit: 'INITIATE PROTOCOL',
-            post_submit: 'PROTOCOL INITIATED. OUR ARCHITECTS WILL EVALUATE YOUR DATA WITHIN 48 HOURS.'
+            initiate: 'INITIATE PARTNERSHIP PROTOCOL',
+            post_submit: 'INQUIRY RECEIVED. OUR STRATEGISTS WILL REVIEW YOUR DATA WITHIN 48 HOURS.'
         }
     },
     de: {
         header: {
-            manifesto: 'MANIFEST',
+            manifesto: 'PRINZIPIEN',
             studios: 'STUDIOS',
             ventures: 'VENTURES',
             contact: 'KONTAKT',
@@ -209,63 +252,89 @@ export const translations = {
         },
         common: {
             backToCore: 'ZURÜCK ZUM KERN',
-            enter: 'EINTRETEN',
+            enter: 'VERBINDEN',
             scroll: 'SCROLLEN',
             selectDivision: 'Bereich Wählen',
             purpose: 'ZWECK',
             breakdown: 'AUFSCHLÜSSELUNG',
-            serviceModel: 'SERVICEMODELL'
+            serviceModel: 'SERVICEMODELL',
+            capabilities: 'OPERATIONALE MODULE'
         },
         home: {
             headline: 'KAPITAL STUDIO',
-            subHeadline: 'DIE ARCHITEKTEN DER MARKTDOMINANZ. BERLIN.',
+            subHeadline: 'Präzise Venture-Architektur. Berlin. 2026.',
             metrics: {
                 valuation: 'Portfolio-Bewertung',
                 partners: 'Strategische Partner',
                 ventures: 'Aktive Ventures',
                 moic: 'Aktueller Portfolio-MOIC'
+            },
+            principles: {
+                title: 'DIE KAPITAL PRINZIPIEN',
+                p1: {
+                    title: 'Präzisions-Technik',
+                    desc: 'Wir priorisieren die Reduktion technischer Schulden und skalierbare Architektur über alles. Wenn es nicht skaliert, wird es nicht gebaut.'
+                },
+                p2: {
+                    title: 'Strategische Ausrichtung',
+                    desc: 'Wir sind Partner, keine Lieferanten. Unser Equity-Modell stellt sicher, dass unsere Ziele perfekt mit denen unserer Kunden gespiegelt sind.'
+                },
+                p3: {
+                    title: 'Operationale Transparenz',
+                    desc: 'Wir bieten klare, datengestützte Berichte über IT-, Design- und Marketing-Performance.'
+                },
+                p4: {
+                    title: 'Markt-Langlebigkeit',
+                    desc: 'Wir bauen für das nächste Jahrzehnt, nicht für den nächsten Trend. Wir konzentrieren uns auf „Owned Media“ und nachhaltiges Wachstum.'
+                }
             }
         },
         studios: {
             marketing: {
                 title: 'Marketing Studio',
-                desc: 'Transformation von Marken von "Ware" zu "Kult". Proprietärer Zielgruppenbesitz und anti-algorithmische Strategie.',
+                desc: 'Strategische Markenpositionierung & Owned Media. Reduktion von Plattformabhängigkeit.',
                 page: {
                     title: 'MARKETING STUDIO',
-                    subtitle: '[Die Evangelismus-Abteilung]',
-                    headline: 'Jenseits von Performance. Hingabe Aufbauen.',
-                    copy: 'Wir lehnen die "Pay-to-Play"-Falle ab. Wir konzentrieren uns auf Marken-Mythologie und Owned-Media-Ökosysteme (Newsletter/Communities), um sicherzustellen, dass Marken algorithmische Abhängigkeit umgehen.',
-                    cta: 'HINGABE KONSTRUIEREN',
-                    purpose: 'Transformation von Marken von "Ware" zu "Kult".',
+                    subtitle: '[Die Wachstums-Abteilung]',
+                    headline: 'Strategische Markenpositionierung & Owned Media.',
+                    copy: 'Wir gehen über traditionelles Performance-Marketing hinaus. Durch die Entwicklung proprietärer Ökosysteme und tiefer Marktpositionierung reduzieren wir Plattformabhängigkeit und steigern den langfristigen Kundenwert.',
+                    cta: 'WACHSTUMSSTRATEGIE ANSEHEN',
+                    purpose: 'Transformation von Marken zu strategischen Vermögenswerten.',
                     breakdown: {
                         1: {
                             title: 'Zielgruppenbesitz',
                             desc: 'Proprietäre Newsletter- & Community-Ökosysteme.'
                         },
                         2: {
-                            title: 'Marken-Mythologie',
-                            desc: 'Aufbau von Glaubenssystemen, nicht nur Kampagnen.'
+                            title: 'Markenpositionierung',
+                            desc: 'Aufbau von Marktautorität, nicht nur Kampagnen.'
                         },
                         3: {
-                            title: 'Anti-Algorithmisch',
-                            desc: 'Strategien, die Plattform-Volatilität überleben.'
+                            title: 'Plattform-Unabhängigkeit',
+                            desc: 'Strategien, die algorithmische Volatilität überstehen.'
                         }
                     },
                     service: {
-                        title: 'Ingenieurmäßige Hingabe',
-                        desc: 'Aufbau tiefer Loyalität unter Umgehung traditioneller Werbeausgaben-Mechaniken. Wir machen Kunden zu Evangelisten.'
+                        title: 'Strategisches Wachstum',
+                        desc: 'Aufbau tiefer Loyalität unter Umgehung traditioneller Werbemechaniken. Wir machen Kunden zu langfristigen Stakeholdern.'
+                    },
+                    capabilities: {
+                        1: { title: 'Owned Media Strategie', desc: 'Entwicklung proprietärer Newsletter- und Content-Hubs.' },
+                        2: { title: 'Markenpositionierung', desc: 'Wettbewerbsanalyse und High-Level-Messaging.' },
+                        3: { title: 'Wachstumssysteme', desc: 'Automatisierte Lead-Generierung und Funnel-Optimierung.' },
+                        4: { title: 'Community-Architektur', desc: 'Aufbau privater Mitglieder-Ökosysteme und Loyalitäts-Loops.' }
                     }
                 }
             },
             itProduct: {
                 title: 'IT & Produkt Studio',
-                desc: 'Das technische Rückgrat für rasante Skalierung. Einsatz des "Kapital Stack" und KI-Agenten-Integration.',
+                desc: 'Aufbau skalierbarer digitaler Infrastruktur. Stabilität auf Enterprise-Niveau.',
                 page: {
                     title: 'IT & PRODUKT',
                     subtitle: '[Die Infrastruktur-Abteilung]',
-                    headline: 'Das Unvermeidliche Konstruieren.',
-                    copy: 'Wir bauen den "Kapital Stack"—ein proprietäres, modulares Framework für schnelle Bereitstellung. Fokus auf Agentic Workflows (KI), Architecture as a Service (AaaS) und 4-Wochen-MVP-Hyper-Sprints.',
-                    cta: 'DEN STACK INITIIEREN',
+                    headline: 'Aufbau skalierbarer digitaler Infrastruktur.',
+                    copy: 'Wir implementieren den "Kapital Stack"—ein modulares Framework für Enterprise-Stabilität. Wir integrieren KI-gesteuerte Workflows und schnelle Produktentwicklung für technische Langlebigkeit.',
+                    cta: 'INFRASTRUKTUR ANSEHEN',
                     purpose: 'Bau des technischen Rückgrats für rasante Skalierung.',
                     breakdown: {
                         1: {
@@ -284,27 +353,33 @@ export const translations = {
                     service: {
                         title: 'Architektur als Service',
                         desc: '(AaaS). Infrastruktur, die ab Tag 0 skaliert. Wir bauen Systeme, die bei Serie A nicht neu gebaut werden müssen.'
+                    },
+                    capabilities: {
+                        1: { title: 'Systemarchitektur', desc: 'Individuelle ERP/CRM-Integrationen und Cloud-Infrastruktur.' },
+                        2: { title: 'Agentic Workflows', desc: 'Einsatz autonomer KI-Agenten zur Aufgabenautomatisierung.' },
+                        3: { title: 'Produktentwicklung', desc: 'Full-Stack Web- und Mobile-Application-Engineering.' },
+                        4: { title: 'Technisches Audit', desc: 'Tiefenanalyse von Legacy-Code und Sicherheitsprotokollen.' }
                     }
                 }
             },
             design: {
                 title: 'Design Studio',
-                desc: 'Definition der visuellen Schwerkraft. High-Friction Branding und Erstellung von Luxus-Assets.',
+                desc: 'High-End Identität & User Experience. Institutionelle Qualität.',
                 page: {
                     title: 'DESIGN STUDIO',
-                    subtitle: '[Die Ästhetik-Abteilung]',
-                    headline: 'Visuelle Schwerkraft.',
-                    copy: 'Wir glauben an "High-Friction"-Design, das den Scroll stoppt. Wir bieten Identitätsarchitektur, taktile UI/UX und digitale Handwerkskunst auf Luxus-Niveau.',
-                    cta: 'DIE ÄSTHETIK ERWERBEN',
+                    subtitle: '[Die Identitäts-Abteilung]',
+                    headline: 'High-End Identität & User Experience.',
+                    copy: 'Design ist ein strategisches Asset. Wir erschaffen visuelle Identitäten und digitale Schnittstellen, die institutionelle Qualität widerspiegeln und Marktautorität sichern.',
+                    cta: 'DESIGN-PORTFOLIO ANSEHEN',
                     purpose: 'Definition der visuellen Schwerkraft einer Marke.',
                     breakdown: {
                         1: {
-                            title: 'High-Friction Branding',
-                            desc: 'Visuals, die Aufmerksamkeit und Innehalten fordern.'
+                            title: 'Strategisches Branding',
+                            desc: 'Visuals, die Aufmerksamkeit fordern und Autorität kommunizieren.'
                         },
                         2: {
-                            title: 'Gefühl > Bedienbarkeit',
-                            desc: 'Priorisierung der viszeralen Wirkung über generische Usability-Muster.'
+                            title: 'User Experience',
+                            desc: 'Priorisierung intuitiver Abläufe und erstklassiger Interaktion.'
                         },
                         3: {
                             title: 'Luxus-Assets',
@@ -312,20 +387,26 @@ export const translations = {
                         }
                     },
                     service: {
-                        title: 'Visuelle Identität & Kinetisches Design',
-                        desc: 'Wir erschaffen die visuelle Seele des Unternehmens. Bewegung, Typografie und Layout, die Respekt einfordern.'
+                        title: 'Visuelle Identität & Systeme',
+                        desc: 'Wir erschaffen die visuelle Seele des Unternehmens. Typografie, Layout und Motion, die Respekt einfordern.'
+                    },
+                    capabilities: {
+                        1: { title: 'Corporate Identity', desc: 'Umfassende Markenrichtlinien, Typografie und Logos.' },
+                        2: { title: 'UI/UX Design', desc: 'Nutzerzentrierte Schnittstellenarchitektur für komplexe digitale Produkte.' },
+                        3: { title: 'Motion & Kinetic Design', desc: 'High-End Video-Assets und Schnittstellen-Animationen.' },
+                        4: { title: 'Strategisches Prototyping', desc: 'Visualisierung zukünftiger Produktzustände für Stakeholder-Alignment.' }
                     }
                 }
             },
             investment: {
                 title: 'Investment Mgmt',
-                desc: 'Wachstumstreiber durch strategisches Eigenkapital und liquides Kapital. Seed-Stage Venture Funding.',
+                desc: 'Integriertes Kapital- & Venture-Management. Strategische Holding.',
                 page: {
                     title: 'INVESTMENT MGMT',
                     subtitle: '[Die Kapital-Abteilung]',
-                    headline: 'Strategisches Eigenkapital. Langfristige Dominanz.',
-                    copy: 'Wir sind eine Metaphysische Holdinggesellschaft. Wir bieten eine Mischung aus liquidem Kapital und "Sweat Equity" durch unsere Studio-Dienstleistungen und fungieren als Innovationsarm für deutsches Vermögen und den Mittelstand.',
-                    cta: 'FÜR PARTNERSCHAFT EINREICHEN',
+                    headline: 'Integriertes Kapital- & Venture-Management.',
+                    copy: 'Eine strategische Holdinggesellschaft für den deutschen Markt. Wir alignieren Interessen durch Equity-for-Service-Modelle und direkte Kapitalinjektionen und schaffen Werte für Partner und den Mittelstand.',
+                    cta: 'PARTNERSCHAFTS-MODELLE ANSEHEN',
                     purpose: 'Wachstumstreiber durch strategisches Eigenkapital und liquides Kapital.',
                     breakdown: {
                         1: {
@@ -344,6 +425,12 @@ export const translations = {
                     service: {
                         title: 'Equity-for-Service & GP/LP',
                         desc: 'Interessenangleichung. Wir gewinnen, wenn Sie gewinnen. Kapitalstrukturierung für langfristigen Zinseszins.'
+                    },
+                    capabilities: {
+                        1: { title: 'Equity-for-Service', desc: 'Strukturierte Partnerschaften für Early- und Growth-Stage Ventures.' },
+                        2: { title: 'Venture Inkubation', desc: 'Full-Lifecycle-Support von der Idee bis zum Markteintritt.' },
+                        3: { title: 'Mittelstand Digitalisierung', desc: 'Unterstützung etablierter deutscher Firmen beim Übergang zu Digital-First-Modellen.' },
+                        4: { title: 'Portfolio Management', desc: 'Strategische Überwachung und Exit-Vorbereitung für Kapitalbeteiligungen.' }
                     }
                 }
             }
@@ -355,16 +442,16 @@ export const translations = {
             email: 'DIGITALE KOMMUNIQUE',
             forum: {
                 title: 'FORUM',
-                name: 'CODENAME / NAME',
+                name: 'NAME',
                 email: 'RÜCKADRESSE',
-                message: 'TRANSMISSION',
-                submit: 'UPLOAD STARTEN',
+                message: 'NACHRICHT',
+                submit: 'NACHRICHT SENDEN',
                 sending: 'SENDE...',
-                sent: 'TRANSMISSION EMPFANGEN.'
+                sent: 'NACHRICHT EMPFANGEN.'
             }
         },
         partnership: {
-            title: 'PARTNERSHAFTS-PROTOKOLL',
+            title: 'PARTNERSHAFTS-ANFRAGE-PROTOKOLL',
             subtitle: '[DAS LEAD-FORMULAR]',
             basics: {
                 title: 'DIE GRUNDLAGEN',
@@ -375,8 +462,8 @@ export const translations = {
             },
             thesis: {
                 title: 'DIE THESE',
-                bottleneck: 'PRIMÄRER ENG-PASS, DER DOMINANZ VERHINDERT?',
-                devotion: 'WARUM WÄRE EIN KUNDE IHRER MARKE ERGEBEN?'
+                bottleneck: 'PRIMÄRER ENG-PASS, DER WACHSTUM VERHINDERT?',
+                devotion: 'WARUM WÜRDE EIN KUNDE IHRE MARKE WÄHLEN?'
             },
             debt: {
                 title: 'TECHNISCHE SCHULD',
@@ -390,7 +477,8 @@ export const translations = {
                 investment: 'INVESTMENT'
             },
             submit: 'PROTOKOLL INITIIEREN',
-            post_submit: 'PROTOKOLL INITIIIERT. UNSERE ARCHITEKTEN WERDEN IHRE DATEN INNERHALB VON 48 STUNDEN AUSWERTEN.'
+            initiate: 'PARTNERSCHAFTS-PROTOKOLL STARTEN',
+            post_submit: 'ANFRAGE ERHALTEN. UNSERE STRATEGEN WERDEN IHRE DATEN INNERHALB VON 48 STUNDEN PRÜFEN.'
         }
     }
 };
