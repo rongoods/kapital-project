@@ -11,13 +11,41 @@ import Partnership from './pages/Partnership';
 
 function App() {
   React.useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let velocity = 0;
+    let rafId = null;
+
     const handleScroll = () => {
-      document.body.style.setProperty('--scroll-y', `${window.scrollY}px`);
-      document.body.style.setProperty('--scroll-pct', `${window.scrollY / (document.body.scrollHeight - window.innerHeight)}`);
+      const currentScrollY = window.scrollY;
+      const delta = Math.abs(currentScrollY - lastScrollY);
+      velocity = Math.min(delta, 100); // Cap velocity for stability
+      lastScrollY = currentScrollY;
+
+      document.body.style.setProperty('--scroll-y', `${currentScrollY}px`);
+      document.body.style.setProperty('--scroll-pct', `${currentScrollY / (document.body.scrollHeight - window.innerHeight)}`);
+      document.body.style.setProperty('--scroll', currentScrollY);
+      document.body.style.setProperty('--scroll-vel', velocity);
+    };
+
+    const updateVelocity = () => {
+      // Smooth decay for velocity to create the "settle" effect
+      if (velocity > 0.1) {
+        velocity *= 0.92; // Viscosity factor
+        document.body.style.setProperty('--scroll-vel', velocity);
+      } else if (velocity !== 0) {
+        velocity = 0;
+        document.body.style.setProperty('--scroll-vel', 0);
+      }
+      rafId = requestAnimationFrame(updateVelocity);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    rafId = requestAnimationFrame(updateVelocity);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
