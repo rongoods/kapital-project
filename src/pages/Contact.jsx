@@ -39,7 +39,7 @@ export default function Contact() {
                 <section className="space-y-12">
                     {/* Phone Numbers */}
                     <div>
-                        <h2 className="font-mono text-xs border-b border-white pb-2 mb-4 uppercase text-gray-500">
+                        <h2 className="font-mono text-xs border-b border-theme pb-2 mb-4 uppercase text-gray-500">
                             {t('contact.phone')}
                         </h2>
                         <ul className="space-y-2 font-header text-2xl md:text-3xl">
@@ -53,7 +53,7 @@ export default function Contact() {
 
                     {/* Email */}
                     <div>
-                        <h2 className="font-mono text-xs border-b border-white pb-2 mb-4 uppercase text-gray-500">
+                        <h2 className="font-mono text-xs border-b border-theme pb-2 mb-4 uppercase text-gray-500">
                             {t('contact.email')}
                         </h2>
                         <a href="mailto:info@kapitalstudio.com" className="font-header text-2xl md:text-3xl block hover:underline decoration-1 underline-offset-4 decoration-white">
@@ -63,7 +63,7 @@ export default function Contact() {
                 </section>
 
                 {/* Forum / Contact Form */}
-                <section className="bg-[#0a0a0a] border border-white p-8">
+                <section className="bg-card border border-theme p-8">
                     <h2 className="font-header text-2xl mb-8 border-b border-gray-800 pb-4">
                         {t('contact.forum.title')}
                     </h2>
@@ -88,7 +88,7 @@ export default function Contact() {
                                 <input
                                     type="text"
                                     required
-                                    className="w-full bg-transparent border-b border-[#333] py-2 font-mono text-sm focus:border-white focus:outline-none transition-colors"
+                                    className="w-full bg-transparent border-b border-[#333] py-2 font-mono text-sm focus:border-theme focus:outline-none transition-colors"
                                 />
                             </div>
 
@@ -99,7 +99,7 @@ export default function Contact() {
                                 <input
                                     type="email"
                                     required
-                                    className="w-full bg-transparent border-b border-[#333] py-2 font-mono text-sm focus:border-white focus:outline-none transition-colors"
+                                    className="w-full bg-transparent border-b border-[#333] py-2 font-mono text-sm focus:border-theme focus:outline-none transition-colors"
                                 />
                             </div>
 
@@ -110,14 +110,14 @@ export default function Contact() {
                                 <textarea
                                     required
                                     rows={4}
-                                    className="w-full bg-transparent border-b border-[#333] py-2 font-mono text-sm focus:border-white focus:outline-none transition-colors resize-none"
+                                    className="w-full bg-transparent border-b border-[#333] py-2 font-mono text-sm focus:border-theme focus:outline-none transition-colors resize-none"
                                 ></textarea>
                             </div>
 
                             <button
                                 type="submit"
                                 disabled={formState === 'sending'}
-                                className="w-full border border-white py-4 font-mono text-sm uppercase hover:bg-white hover:text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-wait mt-8"
+                                className="w-full border border-theme py-4 font-mono text-sm uppercase bg-accent-hover transition-all duration-300 disabled:opacity-50 disabled:cursor-wait mt-8"
                             >
                                 {formState === 'sending' ? t('contact.forum.sending') : t('contact.forum.submit')}
                             </button>

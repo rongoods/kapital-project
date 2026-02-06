@@ -22,7 +22,7 @@ export default function Design() {
             </div>
 
             {/* MAIN HEADLINE & COPY */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 mb-32 md:mb-48 pb-12 border-b border-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 mb-32 md:mb-48 pb-12 border-b border-theme">
                 <div>
                     <h2 className="text-4xl md:text-5xl font-header leading-[1.1]">
                         {t('studios.design.page.headline')}
@@ -32,7 +32,7 @@ export default function Design() {
                     <p className="font-mono text-sm md:text-base text-gray-300 leading-relaxed mb-12">
                         {t('studios.design.page.copy')}
                     </p>
-                    <div className="border border-white p-6 inline-block self-start">
+                    <div className="border border-theme p-6 inline-block self-start">
                         <span className="font-mono text-xs uppercase tracking-widest text-[#00ff41] animate-pulse">
                             ● {t('studios.design.page.purpose')}
                         </span>
@@ -41,20 +41,20 @@ export default function Design() {
             </div>
 
             {/* BREAKDOWN SECTION */}
-            <div className="mb-32 md:mb-48 pb-12 border-b border-white">
+            <div className="mb-32 md:mb-48 pb-12 border-b border-theme">
                 <h3 className="section-title mb-16 md:mb-24">{t('common.breakdown')}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div className="border border-white p-8 hover:bg-[#111] transition-colors h-full">
+                    <div className="border border-theme p-8 hover:bg-card transition-colors h-full">
                         <span className="block font-mono text-xs text-gray-500 mb-6">01</span>
                         <h4 className="font-header text-2xl mb-4">{t('studios.design.page.breakdown.1.title')}</h4>
                         <p className="font-mono text-xs text-gray-400 leading-relaxed">{t('studios.design.page.breakdown.1.desc')}</p>
                     </div>
-                    <div className="border border-white p-8 hover:bg-[#111] transition-colors h-full">
+                    <div className="border border-theme p-8 hover:bg-card transition-colors h-full">
                         <span className="block font-mono text-xs text-gray-500 mb-6">02</span>
                         <h4 className="font-header text-2xl mb-4">{t('studios.design.page.breakdown.2.title')}</h4>
                         <p className="font-mono text-xs text-gray-400 leading-relaxed">{t('studios.design.page.breakdown.2.desc')}</p>
                     </div>
-                    <div className="border border-white p-8 hover:bg-[#111] transition-colors h-full">
+                    <div className="border border-theme p-8 hover:bg-card transition-colors h-full">
                         <span className="block font-mono text-xs text-gray-500 mb-6">03</span>
                         <h4 className="font-header text-2xl mb-4">{t('studios.design.page.breakdown.3.title')}</h4>
                         <p className="font-mono text-xs text-gray-400 leading-relaxed">{t('studios.design.page.breakdown.3.desc')}</p>
@@ -63,11 +63,11 @@ export default function Design() {
             </div>
 
             {/* CAPABILITIES / OPERATIONAL MODULES */}
-            <div className="mb-32 md:mb-48 pb-12 border-b border-white">
+            <div className="mb-32 md:mb-48 pb-12 border-b border-theme">
                 <h3 className="section-title mb-16 md:mb-24">{t('common.capabilities')}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     {capabilities.map((cap, i) => (
-                        <div key={i} className="border border-white p-8 md:p-12 hover:bg-[#1A1A1A] transition-colors group">
+                        <div key={i} className="border border-theme p-8 md:p-12 hover-card transition-colors group">
                             <h4 className="font-header text-xl md:text-2xl mb-4 group-hover:text-white transition-colors">{cap.title}</h4>
                             <p className="font-mono text-xs md:text-sm text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed">{cap.desc}</p>
                         </div>
@@ -78,7 +78,7 @@ export default function Design() {
             {/* SERVICE MODEL */}
             <div className="mb-32 md:mb-48">
                 <h3 className="section-title mb-16 md:mb-24">{t('common.serviceModel')}</h3>
-                <div className="bg-[#111] p-12 md:p-16 border border-white">
+                <div className="bg-card p-12 md:p-16 border border-theme">
                     <h4 className="font-header text-3xl md:text-4xl mb-6 text-white">{t('studios.design.page.service.title')}</h4>
                     <p className="font-mono text-sm text-gray-400 max-w-3xl leading-relaxed">
                         {t('studios.design.page.service.desc')}
@@ -92,7 +92,7 @@ export default function Design() {
             </div>
 
             {/* FOOTER NAV */}
-            <div className="page-footer mt-24 pt-12 border-t border-white">
+            <div className="page-footer mt-24 pt-12 border-t border-theme">
                 <Link to="/" className="btn-core">
                     <span>←</span> [{t('common.backToCore')}]
                 </Link>

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Header() {
   const { t, language, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   const navItems = [
     { label: t('header.manifesto'), path: '/' },
@@ -29,6 +31,14 @@ export default function Header() {
               [{item.label}]
             </Link>
           ))}
+
+          <button
+            onClick={toggleTheme}
+            className="nav-link font-bold hover:text-white transition-colors"
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}
+          >
+            [{theme === 'dark' ? 'LIGHT' : 'DARK'}]
+          </button>
 
           <button
             onClick={toggleLanguage}

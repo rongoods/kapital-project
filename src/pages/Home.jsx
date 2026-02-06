@@ -88,13 +88,13 @@ export default function Home() {
 
             {/* Principles Section */}
             <section className="container my-32">
-                <h2 className="section-title mb-12 border-b border-white pb-6 inline-block w-full">
+                <h2 className="section-title mb-12 border-b border-theme pb-6 inline-block w-full">
                     {t('home.principles.title')}
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {principles.map((p, index) => (
-                        <div key={index} className="border border-white p-6 hover:bg-[#111] transition-colors">
+                        <div key={index} className="border border-theme p-6 hover:bg-card transition-colors">
                             <div className="font-mono text-xs text-gray-500 mb-4">{p.num}</div>
                             <h3 className="font-header text-xl mb-4">{p.title}</h3>
                             <p className="font-mono text-xs text-gray-400 leading-relaxed">

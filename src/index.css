@@ -1,25 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Oswald:wght@500;700&display=swap');
 
 :root {
-  --bg-color: #050505;
-  --text-color: #ffffff;
-  --text-muted: #888888;
-  --border-color: #ffffff;
-  --accent-color: #333333;
-  --hover-bg: #1a1a1a;
-
-  --font-sans: 'Inter', sans-serif;
-  --font-header: 'Oswald', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-
+  /* Common Variables */
   --header-height: 80px;
   --container-width: 1400px;
-
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 32px;
   --spacing-xl: 64px;
   --spacing-xxl: 128px;
+  --font-sans: 'Inter', sans-serif;
+  --font-header: 'Oswald', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Default Dark Mode */
+  --bg-color: #050505;
+  --text-color: #ffffff;
+  --text-muted: #888888;
+  --border-color: rgba(255, 255, 255, 0.2);
+  --accent-color: #333333;
+  --hover-bg: #1a1a1a;
+  --hover-accent: #ffffff;
+  --hover-accent-text: #000000;
+
+  /* Grain & Smoke Variables */
+  --grain-opacity: 0.12;
+  --grain-blend: overlay;
+  --arc-color: #1a1b26;
+  /* Deep Slate */
+  --arc-grain-blend: soft-light;
+  --smoke-opacity: 1;
+  --smoke-gradient: radial-gradient(circle at 50% 50%, rgba(20, 20, 18, 0.45) 0%, rgba(42, 42, 38, 0.25) 40%, transparent 70%);
+
+  --card-bg: #111111;
+  --card-hover-bg: #1A1A1A;
+}
+
+/* Light Mode Overrides */
+:root.light-mode {
+  --bg-color: #DEDDDA;
+  /* Warm Bone */
+  --text-color: #1A1A1A;
+  /* Deep Charcoal */
+  --text-muted: #555555;
+  --border-color: #1A1A1A;
+  --accent-color: #1A1A1A;
+  --hover-bg: #F0EEEB;
+  /* Warm off-white, between bone and white */
+  --hover-accent: #F0EEEB;
+  /* Warm off-white hover */
+  --hover-accent-text: #1A1A1A;
+  /* Charcoal text for warm hover */
+  --spacing-sm: 8px;
+  /* Fixed missing spacing vars if inherited issues existed */
+
+  /* Light Mode Specifics */
+  --grain-opacity: 0.15;
+  /* Stronger for physical "sand" look */
+  --grain-blend: multiply;
+  --arc-color: #8d7d77;
+  /* Desaturated Umber */
+  --arc-grain-blend: multiply;
+  --smoke-opacity: 0.4;
+  --smoke-gradient: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 80%);
+  /* Shadow vignette */
+
+  --card-bg: rgba(255, 255, 255, 0.3);
+  --card-hover-bg: rgba(255, 255, 255, 0.5);
 }
 
 * {
@@ -34,6 +81,83 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
+
+  /* Transition for Theme Smoothing */
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Kinetic Grain Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: calc(100% + 200px);
+  height: calc(100% + 200px);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: var(--grain-opacity);
+  /* High-frequency fractal noise for "sand" texture */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: var(--grain-blend);
+
+  /* Jitter Animation + Kinetic Movement */
+  animation: jitter 0.2s steps(2) infinite;
+  transform: translate(calc(var(--scroll-pct, 0) * -40px), calc(var(--scroll-pct, 0) * -80px));
+  transition: opacity 0.5s ease;
+  will-change: transform;
+}
+
+@keyframes jitter {
+  0% {
+    transform: translate(calc(var(--scroll-pct, 0) * -40px + 0px), calc(var(--scroll-pct, 0) * -80px + 0px));
+  }
+
+  50% {
+    transform: translate(calc(var(--scroll-pct, 0) * -40px + 1px), calc(var(--scroll-pct, 0) * -80px + 1px));
+  }
+
+  100% {
+    transform: translate(calc(var(--scroll-pct, 0) * -40px - 1px), calc(var(--scroll-pct, 0) * -80px - 1px));
+  }
+}
+
+/* Kinetic Grain Arc Engine */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -40vh;
+  /* Baseline below the viewport to rise up */
+  left: 50%;
+  width: 160vw;
+  height: 120vh;
+  margin-left: -80vw;
+
+  /* Texture: High-frequency grain as the primary material */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-color: var(--arc-color);
+  background-blend-mode: var(--arc-grain-blend);
+
+  /* Masking into a wide Parabolic Arc - Rising from bottom */
+  mask-image: radial-gradient(ellipse calc(100% + (var(--scroll-pct, 0) * 40%)) calc(70% + (var(--scroll-pct, 0) * 30%)) at center bottom,
+      black 60%,
+      transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse calc(100% + (var(--scroll-pct, 0) * 40%)) calc(70% + (var(--scroll-pct, 0) * 30%)) at center bottom,
+      black 60%,
+      transparent 100%);
+
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.7;
+
+  /* Intensified Motion: Parallax (approx 0.8-1.0 range for "more motion") + Deformation Scale */
+  transform: translateY(calc(var(--scroll-pct, 0) * -35vh)) scaleX(calc(1 + var(--scroll-pct, 0) * 0.3)) skewY(calc(var(--scroll-pct, 0) * -3deg));
+
+  transition: opacity 0.5s ease;
+  will-change: transform, mask-image, -webkit-mask-image;
 }
 
 a {
@@ -109,12 +233,15 @@ h6 {
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background-color: rgba(5, 5, 5, 0.9);
+  background-color: var(--bg-color);
+  /* Use theme variable */
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
   display: flex;
   align-items: center;
+  transition: background-color 0.5s ease;
+  /* Smooth transition */
 }
 
 .header-content {
@@ -149,7 +276,8 @@ h6 {
   display: block;
   background: none;
   border: 1px solid var(--border-color);
-  color: white;
+  color: var(--text-color);
+  /* Use theme variable */
   padding: 4px 8px;
   font-family: var(--font-mono);
   font-size: 0.875rem;
@@ -205,8 +333,8 @@ h6 {
 }
 
 .btn-core:hover {
-  background: white;
-  color: black;
+  background: var(--hover-accent);
+  color: var(--hover-accent-text);
 }
 
 /* Studio Card */
@@ -271,8 +399,8 @@ h6 {
 }
 
 .studio-card:hover .enter-badge {
-  background: white;
-  color: black;
+  background: var(--hover-accent);
+  color: var(--hover-accent-text);
 }
 
 .corner-accent {
@@ -362,7 +490,8 @@ h6 {
 }
 
 .metric-item:hover {
-  background: #111;
+  background: var(--hover-bg);
+  /* Use theme variable */
 }
 
 .metric-value {

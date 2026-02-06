@@ -10,6 +10,16 @@ import Contact from './pages/Contact';
 import Partnership from './pages/Partnership';
 
 function App() {
+  React.useEffect(() => {
+    const handleScroll = () => {
+      document.body.style.setProperty('--scroll-y', `${window.scrollY}px`);
+      document.body.style.setProperty('--scroll-pct', `${window.scrollY / (document.body.scrollHeight - window.innerHeight)}`);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <Layout>
       <Routes>

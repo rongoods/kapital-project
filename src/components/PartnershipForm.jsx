@@ -16,9 +16,9 @@ export default function PartnershipForm() {
             <div className="flex justify-center my-24 animate-fade-in">
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="border border-white bg-transparent text-white px-12 py-6 font-header text-xl md:text-2xl hover:bg-white hover:text-black transition-all uppercase tracking-wider relative group"
+                    className="border border-theme bg-transparent text-white px-12 py-6 font-header text-xl md:text-2xl bg-accent-hover transition-all uppercase tracking-wider relative group"
                 >
-                    <span className="absolute inset-0 border border-white translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></span>
+                    <span className="absolute inset-0 border border-theme translate-x-1 translate-y-1 group-bg-accent-hover transition-transform"></span>
                     <span className="relative">[{t('partnership.initiate')}]</span>
                 </button>
             </div>
@@ -26,7 +26,7 @@ export default function PartnershipForm() {
     }
 
     return (
-        <div className="max-w-4xl mx-auto border border-white bg-[#0a0a0a] p-4 md:p-8 font-mono shadow-2xl relative overflow-hidden my-24 animate-fade-in">
+        <div className="max-w-4xl mx-auto border border-theme bg-card p-4 md:p-8 font-mono shadow-2xl relative overflow-hidden my-24 animate-fade-in">
             {/* Terminal Scanline Effect */}
             <div className="absolute inset-0 pointer-events-none opacity-10"
                 style={{
@@ -63,19 +63,19 @@ export default function PartnershipForm() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div className="space-y-2">
                                 <label className="text-xs text-gray-400">{t('partnership.basics.name')}</label>
-                                <input type="text" required className="w-full bg-[#111] border border-[#333] p-3 text-sm focus:border-white focus:outline-none transition-colors text-white" />
+                                <input type="text" required className="w-full bg-card border border-[#333] p-3 text-sm focus:border-theme focus:outline-none transition-colors text-white" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-xs text-gray-400">{t('partnership.basics.role')}</label>
-                                <input type="text" required className="w-full bg-[#111] border border-[#333] p-3 text-sm focus:border-white focus:outline-none transition-colors text-white" />
+                                <input type="text" required className="w-full bg-card border border-[#333] p-3 text-sm focus:border-theme focus:outline-none transition-colors text-white" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-xs text-gray-400">{t('partnership.basics.url')}</label>
-                                <input type="url" required className="w-full bg-[#111] border border-[#333] p-3 text-sm focus:border-white focus:outline-none transition-colors text-white" />
+                                <input type="url" required className="w-full bg-card border border-[#333] p-3 text-sm focus:border-theme focus:outline-none transition-colors text-white" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-xs text-gray-400">{t('partnership.basics.valuation')}</label>
-                                <input type="text" required className="w-full bg-[#111] border border-[#333] p-3 text-sm focus:border-white focus:outline-none transition-colors text-white" placeholder="€" />
+                                <input type="text" required className="w-full bg-card border border-[#333] p-3 text-sm focus:border-theme focus:outline-none transition-colors text-white" placeholder="€" />
                             </div>
                         </div>
                     </section>
@@ -88,11 +88,11 @@ export default function PartnershipForm() {
                         <div className="space-y-6">
                             <div className="space-y-2">
                                 <label className="text-xs text-gray-400">{t('partnership.thesis.bottleneck')}</label>
-                                <textarea required rows={2} className="w-full bg-[#111] border border-[#333] p-3 text-sm focus:border-white focus:outline-none transition-colors text-white resize-none"></textarea>
+                                <textarea required rows={2} className="w-full bg-card border border-[#333] p-3 text-sm focus:border-theme focus:outline-none transition-colors text-white resize-none"></textarea>
                             </div>
                             <div className="space-y-2">
                                 <label className="text-xs text-gray-400">{t('partnership.thesis.devotion')}</label>
-                                <textarea required rows={2} className="w-full bg-[#111] border border-[#333] p-3 text-sm focus:border-white focus:outline-none transition-colors text-white resize-none"></textarea>
+                                <textarea required rows={2} className="w-full bg-card border border-[#333] p-3 text-sm focus:border-theme focus:outline-none transition-colors text-white resize-none"></textarea>
                             </div>
                         </div>
                     </section>
@@ -125,7 +125,7 @@ export default function PartnershipForm() {
                         <div className="grid grid-cols-2 gap-4">
                             {['it', 'marketing', 'design', 'investment'].map((key) => (
                                 <label key={key} className="flex items-center gap-3 cursor-pointer group">
-                                    <input type="checkbox" className="appearance-none w-4 h-4 border border-white checked:bg-white transition-colors" />
+                                    <input type="checkbox" className="appearance-none w-4 h-4 border border-theme checked:bg-white transition-colors" />
                                     <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
                                         {t(`partnership.service.${key}`)}
                                     </span>
