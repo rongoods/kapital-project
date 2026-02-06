@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
@@ -6,6 +6,10 @@ import { useTheme } from '../context/ThemeContext';
 export default function Header() {
   const { t, language, toggleLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   const navItems = [
     { label: t('header.manifesto'), path: '/' },
@@ -15,44 +19,80 @@ export default function Header() {
   ];
 
   return (
-    <header className="app-header">
-      <div className="container header-content">
-        <Link to="/" className="logo">
-          KAPITAL STUDIO
-        </Link>
+    <>
+      <header className="app-header">
+        <div className="container header-content">
+          <Link to="/" className="logo" onClick={closeMenu}>
+            KAPITAL STUDIO
+          </Link>
 
-        <nav className="nav-links">
+          <nav className="nav-links">
+            {navItems.map((item, index) => (
+              <Link
+                key={index}
+                to={item.path}
+                className="nav-link"
+              >
+                [{item.label}]
+              </Link>
+            ))}
+
+            <button
+              onClick={toggleTheme}
+              className="nav-link font-bold hover:text-white transition-colors"
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}
+            >
+              [{theme === 'dark' ? 'LIGHT' : 'DARK'}]
+            </button>
+
+            <button
+              onClick={toggleLanguage}
+              className="nav-link font-bold hover:text-white transition-colors"
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}
+            >
+              [{language === 'en' ? 'DE' : 'EN'}]
+            </button>
+          </nav>
+
+          <button className="mobile-menu-btn" onClick={toggleMenu}>
+            [{isMenuOpen ? t('header.close') || 'CLOSE' : t('header.menu')}]
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
+        <nav className="mobile-nav">
           {navItems.map((item, index) => (
             <Link
               key={index}
               to={item.path}
-              className="nav-link"
+              className="mobile-nav-link"
+              onClick={closeMenu}
             >
               [{item.label}]
             </Link>
           ))}
 
-          <button
-            onClick={toggleTheme}
-            className="nav-link font-bold hover:text-white transition-colors"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}
-          >
-            [{theme === 'dark' ? 'LIGHT' : 'DARK'}]
-          </button>
+          <div className="mobile-menu-controls">
+            <button
+              onClick={toggleTheme}
+              className="mobile-nav-link"
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}
+            >
+              [{theme === 'dark' ? 'LIGHT' : 'DARK'}]
+            </button>
 
-          <button
-            onClick={toggleLanguage}
-            className="nav-link font-bold hover:text-white transition-colors"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}
-          >
-            [{language === 'en' ? 'DE' : 'EN'}]
-          </button>
+            <button
+              onClick={toggleLanguage}
+              className="mobile-nav-link"
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}
+            >
+              [{language === 'en' ? 'DE' : 'EN'}]
+            </button>
+          </div>
         </nav>
-
-        <button className="mobile-menu-btn">
-          [{t('header.menu')}]
-        </button>
       </div>
-    </header>
+    </>
   );
 }

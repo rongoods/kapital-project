@@ -143,7 +143,7 @@ body::before {
   height: 60vh;
   left: -30vw;
   /* Spatial Re-positioning: Deep in lower third (approx 75% down) */
-  top: calc(75vh + (var(--scroll, 0) * 0.05px));
+  top: calc(75vh - (var(--scroll, 0) * 0.1px));
 
   /* Curvature: Heavy, weighted curve dipping deeply in center */
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
@@ -160,8 +160,8 @@ body::before {
   /* Kinetic Logic: Scroll-Speed Coupling & Viscosity */
   transform-origin: center top;
   transform:
-    translateY(calc(var(--scroll-vel, 0) * 0.2px))
-    /* Speed-linked drop */
+    translateY(calc(var(--scroll-vel, 0) * -0.4px))
+    /* Speed-linked lift */
     rotate(calc(-2deg + (var(--scroll, 0) * 0.001deg))) skewX(calc(-5deg + (var(--scroll, 0) * 0.0005deg) + (var(--scroll-vel, 0) * 0.1deg))) scaleX(calc(1.2 + (var(--scroll-vel, 0) * 0.005)))
     /* Speed-linked stretch */
     scaleY(calc(0.6 + (var(--scroll-vel, 0) * 0.01)));
@@ -305,6 +305,63 @@ h6 {
   .mobile-menu-btn {
     display: none;
   }
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-color);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  backdrop-filter: blur(12px);
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  padding: 12px;
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-nav-link:hover {
+  color: var(--text-muted);
+}
+
+.mobile-menu-controls {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  align-items: center;
 }
 
 /* Layout Main */
