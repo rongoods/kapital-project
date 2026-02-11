@@ -26,8 +26,8 @@
   /* Grain & Smoke Variables */
   --grain-opacity: 0.12;
   --grain-blend: overlay;
-  --arc-color: rgba(40, 40, 35, 0.8);
-  /* Warmer Slate/Bronze like the snippet */
+  --arc-color: rgba(15, 15, 12, 0.98);
+  /* Significantly deeper black-charcoal for maximum presence */
   --arc-grain-blend: soft-light;
   --smoke-opacity: 1;
   --smoke-gradient: radial-gradient(circle at 50% 50%, rgba(20, 20, 18, 0.45) 0%, rgba(42, 42, 38, 0.25) 40%, transparent 70%);
@@ -58,8 +58,8 @@
   --grain-opacity: 0.15;
   /* Stronger for physical "sand" look */
   --grain-blend: multiply;
-  --arc-color: #8d7d77;
-  /* Desaturated Umber */
+  --arc-color: #3a3230;
+  /* Deep desaturated charcoal for Light Mode contrast */
   --arc-grain-blend: multiply;
   --smoke-opacity: 0.4;
   --smoke-gradient: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 80%);
@@ -137,41 +137,99 @@ body::before {
   pointer-events: none;
 }
 
-.kinetic-arc {
+.kinetic-blob-k {
   position: absolute;
-  width: 160vw;
-  height: 60vh;
-  left: -30vw;
-  /* Spatial Re-positioning: Deep in lower third (approx 75% down) */
-  top: calc(75vh - (var(--scroll, 0) * 0.1px));
+  width: 80vw;
+  height: 50vh;
+  left: 10vw;
+  /* Spatial Re-positioning: Rising Drift Baseline */
+  top: calc(55vh - (var(--scroll, 0) * 0.12px));
 
-  /* Curvature: Heavy, weighted curve dipping deeply in center */
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  animation: blobDrift 60s ease-in-out infinite alternate;
 
-  /* Abstract Shape: Hollow weighted parabolic gradient */
-  background: radial-gradient(ellipse at 50% 100%,
-      transparent 35%,
-      var(--arc-color) 60%,
-      transparent 85%);
+  /* Subtile atmospheric blur */
+  filter: blur(45px);
 
-  /* Speed-Coupled Displacement Filter */
-  filter: url(#grainyNoise) blur(25px);
-
-  /* Kinetic Logic: Scroll-Speed Coupling & Viscosity */
-  transform-origin: center top;
+  /* Kinetic Logic: Viscous Morphing & Scroll-Speed Coupling */
+  transform-origin: center center;
   transform:
-    translateY(calc(var(--scroll-vel, 0) * -0.4px))
+    translateY(calc(var(--scroll-vel, 0) * -0.6px))
     /* Speed-linked lift */
-    rotate(calc(-2deg + (var(--scroll, 0) * 0.001deg))) skewX(calc(-5deg + (var(--scroll, 0) * 0.0005deg) + (var(--scroll-vel, 0) * 0.1deg))) scaleX(calc(1.2 + (var(--scroll-vel, 0) * 0.005)))
-    /* Speed-linked stretch */
-    scaleY(calc(0.6 + (var(--scroll-vel, 0) * 0.01)));
-  /* Speed-linked compression */
+    rotate(calc(-5deg + (var(--scroll, 0) * 0.002deg) + (var(--scroll-vel, 0) * 0.2deg))) skewX(calc(-8deg + (var(--scroll-vel, 0) * 0.15deg))) scaleX(calc(1.1 + (var(--scroll-vel, 0) * 0.008))) scaleY(calc(0.9 + (var(--scroll-vel, 0) * 0.012)));
 
-  opacity: 0.6;
-
-  /* Liquid Settle Phase */
-  transition: filter 0.3s ease-out, transform 0.1s linear, background 0.5s ease;
+  opacity: 0.45;
+  transition: filter 0.4s ease-out, transform 0.1s linear, opacity 0.5s ease;
   will-change: transform, filter, opacity;
+}
+
+.blob-path {
+  animation: kMorph 10s ease-in-out infinite alternate;
+  stroke: var(--arc-color);
+  transition: stroke 0.5s ease;
+}
+
+@keyframes kMorph {
+
+  0%,
+  100% {
+    d: path("M30,10 L30,90 M30,50 L65,15 M30,55 L70,85");
+  }
+
+  50% {
+    d: path("M32,12 L28,88 M30,52 L60,20 M30,58 L75,80");
+  }
+}
+
+@keyframes blobDrift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(-8vw, 4vh) rotate(2deg);
+  }
+
+  50% {
+    transform: translate(12vw, -6vh) rotate(-3deg);
+  }
+
+  75% {
+    transform: translate(-4vw, 8vh) rotate(1deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes blobMorph {
+
+  0%,
+  100% {
+    border-radius: 40% 60% 70% 30% / 50% 30% 70% 50%;
+  }
+
+  33% {
+    border-radius: 60% 40% 30% 70% / 60% 70% 30% 40%;
+  }
+
+  66% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+@keyframes blobDrift {
+
+  0%,
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  50% {
+    margin-left: -5vw;
+    margin-top: 3vh;
+  }
 }
 
 a {

@@ -1,13 +1,25 @@
 import React from 'react';
 import Header from './Header';
+import ParticleBackground from './ParticleBackground';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Layout({ children }) {
     const { t } = useLanguage();
     return (
         <div className="layout-root">
+            <ParticleBackground />
             <div className="grainy-arc-container">
-                <div className="kinetic-arc"></div>
+                <svg className="kinetic-blob-k" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path
+                        className="blob-path"
+                        d="M30,10 L30,90 M30,50 L65,15 M30,55 L70,85"
+                        stroke="var(--arc-color)"
+                        strokeWidth="12"
+                        strokeLinecap="round"
+                        fill="none"
+                        filter="url(#grainyNoise)"
+                    />
+                </svg>
             </div>
 
             <Header />
